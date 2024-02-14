@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+
+#canvas-container {
+    border: 1px solid black;
+    margin: 4px;
+}
+#canvas {
+    margin-top: 4px;
+    border: 1px solid red;
+}
+
+.tool-panel {
+    padding: 8px;
+    border-bottom: 1px solid black;
+}
+.image_display {
+    text-align: center;
+}
+#info-panel {
+    padding: 8px;
+    border-top: 1px solid black;
+}
