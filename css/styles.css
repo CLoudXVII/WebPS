@@ -1,27 +1,24 @@
-* {
-    box-sizing: border-box;
-}
 body {
     margin: 0;
 }
-
 #canvas-container {
-    border: 1px solid black;
-    margin: 4px;
+    border: 3px solid purple;
+}
+.tool-panel {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    border-bottom: 3px solid purple;
+}
+.image-container {
+    display: flex;
 }
 #canvas {
-    margin-top: 4px;
-    border: 1px solid red;
-}
-
-.tool-panel {
-    padding: 8px;
-    border-bottom: 1px solid black;
-}
-.image_display {
+    cursor: crosshair;
     text-align: center;
 }
 #info-panel {
-    padding: 8px;
-    border-top: 1px solid black;
+    padding: 1rem;
+    width: 10%;
+    border-right: 3px solid purple;
 }

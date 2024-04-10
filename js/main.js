@@ -2,6 +2,8 @@ window.onload = function() {
     const canvas = document.getElementById('canvas');
     const context = canvas.getContext('2d');
     const uploadBtn = document.getElementById('upload-btn');
+    const imageUrlInput = document.getElementById('image-url');
+    const loadUrlBtn = document.getElementById('load-url-btn');
     const infoPanel = document.getElementById('info-panel');
     
     let imgData = null;
@@ -23,8 +25,20 @@ window.onload = function() {
 
     uploadBtn.addEventListener('change', function(e) {
         const file = e.target.files[0];
+        loadImageFromFile(file);
+    });
+
+    loadUrlBtn.addEventListener('click', function() {
+        const url = imageUrlInput.value.trim();
+        if (url) {
+            loadImageFromURL(url);
+        } else {
+            alert('Введите URL изображения');
+        }
+    });
+
+    function loadImageFromFile(file) {
         const reader = new FileReader();
-        
         reader.onload = function(event) {
             const img = new Image();
             img.onload = function() {
@@ -35,7 +49,21 @@ window.onload = function() {
             }
             img.src = event.target.result;
         }
-        
         reader.readAsDataURL(file);
-    });
+    }
+
+    function loadImageFromURL(url) {
+        const img = new Image();
+        img.crossOrigin = "Anonymous"; // Позволяет избежать ошибок CORS
+        img.onload = function() {
+            canvas.width = img.width;
+            canvas.height = img.height;
+            context.drawImage(img, 0, 0);
+            imgData = context.getImageData(0, 0, canvas.width, canvas.height);
+        }
+        img.onerror = function() {
+            alert('Не удалось загрузить изображение по указанному URL');
+        }
+        img.src = url;
+    }
 };

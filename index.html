@@ -11,11 +11,17 @@
     <div id="canvas-container">
         <div class="tool-panel">
             <input type="file" id="upload-btn" accept="image/*">
+            <div>
+                <input type="text" id="image-url" placeholder="Введите URL изображения">
+                <button id="load-url-btn">Загрузить</button>
+            </div>
         </div>
-        <div class="image_display">
-            <canvas id="canvas" width="500" height="500"></canvas>
+        <div class="image-container">
+            <div id="info-panel"></div>
+            <div class="image_display">
+                <canvas id="canvas" width="500" height="500"></canvas>
+            </div>
         </div>
-        <div id="info-panel"></div>
     </div>
 
     <script src="js/main.js"></script>
