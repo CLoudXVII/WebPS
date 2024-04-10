@@ -1,4 +1,4 @@
-body {
+* {
     margin: 0;
 }
 #canvas-container {
@@ -6,12 +6,13 @@ body {
 }
 .tool-panel {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     padding: 1rem;
     border-bottom: 3px solid purple;
 }
 .image-container {
     display: flex;
+    min-height: 500px;
 }
 #canvas {
     cursor: crosshair;

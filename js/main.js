@@ -4,16 +4,17 @@ window.onload = function() {
     const uploadBtn = document.getElementById('upload-btn');
     const imageUrlInput = document.getElementById('image-url');
     const loadUrlBtn = document.getElementById('load-url-btn');
+
     const infoPanel = document.getElementById('info-panel');
     
     let imgData = null;
 
     function updateInfoPanel(x, y) {
         const pixel = context.getImageData(x, y, 1, 1).data;
-        const rgb = `RGB: ${pixel[0]}, ${pixel[1]}, ${pixel[2]}`;
-        const coordinates = `Координаты: ${x}, ${y}`;
-        const imageDimensions = `Размеры изображения: ${canvas.width} x ${canvas.height} пикселей`;
-        infoPanel.innerHTML = `${rgb}<br>${coordinates}<br>${imageDimensions}`;
+        const rgb = `${pixel[0]}, ${pixel[1]}, ${pixel[2]}`;
+        const coordinates = `${x}, ${y}`;
+        const imageDimensions = `${canvas.width} x ${canvas.height}`;
+        infoPanel.innerHTML = `Размер ${imageDimensions} px<br>RGB: ${rgb}<br>Координаты: ${coordinates}`;
     }
 
     canvas.addEventListener('mousemove', function(e) {
@@ -54,7 +55,7 @@ window.onload = function() {
 
     function loadImageFromURL(url) {
         const img = new Image();
-        img.crossOrigin = "Anonymous"; // Позволяет избежать ошибок CORS
+        img.crossOrigin = "Anonymous";
         img.onload = function() {
             canvas.width = img.width;
             canvas.height = img.height;
