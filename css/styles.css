@@ -27,6 +27,7 @@
     position: fixed;
     padding: 1rem;
     width: 200px;
+    -webkit-text-stroke: 0.25px black;
 }
 .upload-btn-container > label {
     padding: 10px 20px;
