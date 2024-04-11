@@ -4,7 +4,6 @@ window.onload = function() {
     const uploadBtn = document.getElementById('upload-btn');
     const imageUrlInput = document.getElementById('image-url');
     const loadUrlBtn = document.getElementById('load-url-btn');
-
     const infoPanel = document.getElementById('info-panel');
     
     let imgData = null;
@@ -12,9 +11,9 @@ window.onload = function() {
     function updateInfoPanel(x, y) {
         const pixel = context.getImageData(x, y, 1, 1).data;
         const rgb = `${pixel[0]}, ${pixel[1]}, ${pixel[2]}`;
-        const coordinates = `${x}, ${y}`;
+        const coordinates = `X: ${x}; Y: ${y}`;
         const imageDimensions = `${canvas.width} x ${canvas.height}`;
-        infoPanel.innerHTML = `Размер ${imageDimensions} px<br>RGB: ${rgb}<br>Координаты: ${coordinates}`;
+        infoPanel.innerHTML = `Размер:<br>${imageDimensions} px<br>RGB: ${rgb}<br>${coordinates}`;
     }
 
     canvas.addEventListener('mousemove', function(e) {

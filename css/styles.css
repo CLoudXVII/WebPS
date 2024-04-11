@@ -1,14 +1,16 @@
 * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
 }
 #canvas-container {
-    border: 3px solid purple;
+    width: auto;
+
 }
 .tool-panel {
     display: flex;
-    gap: 1rem;
-    padding: 1rem;
-    border-bottom: 3px solid purple;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem;
 }
 .image-container {
     display: flex;
@@ -17,9 +19,44 @@
 #canvas {
     cursor: crosshair;
     text-align: center;
+    outline: none;
 }
 #info-panel {
+    color: white;
+    font-size: 24px;
+    position: fixed;
     padding: 1rem;
-    width: 10%;
-    border-right: 3px solid purple;
+    width: 200px;
+}
+.upload-btn-container > label {
+    padding: 10px 20px;
+    font-size: 18px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: purple;
+    color: white;
+}
+#upload-btn {
+    visibility: hidden;
+    position: absolute;
+}
+#image-url {
+    margin-right: 1rem;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid purple;
+}
+#load-url-btn {
+    padding: 10px 20px;
+    outline: none;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: purple;
+    color: white;
+    outline: none;
+    border: 0;
 }
